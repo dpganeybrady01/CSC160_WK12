@@ -14,7 +14,17 @@ STUDENT: Write a function that will take two vectors of int
          the same numbers in the same order) and false if they
          are not equal
 */
-
+bool areEqual(vector<int> a, vector<int> b) {
+  if (a.size() != b.size()) {
+    return false;
+  }
+  for (int i = 0; i < a.size(); i++) {
+    if (a[i] != b[i]) {
+      return false;
+    }
+  }
+  return true;
+}
 /*
 STUDENT: Write a function that will take two vectors of int
          and return true if the second vector exists inside 
