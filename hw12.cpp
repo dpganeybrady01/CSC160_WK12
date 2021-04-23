@@ -31,6 +31,17 @@ STUDENT: Write a function that will take two vectors of int
          the first vector.  Use recursion to implement this
          function
 */
+bool find(vector<int> bigVec, vector<int> smallVec) {
+  if (bigVec.size() < smallVec.size()) {
+    return false;
+  }
+  vector<int> sliceVec(bigVec.begin(), bigVec.begin()+smallVec.size());
+  if (sliceVec == smallVec) {
+    return true;
+  }
+  vector<int> recurseVec(bigVec.begin()+1, bigVec.end());
+  return find(recurseVec, smallVec);
+}
 
 void printVector(vector<int> v) {
   for (int i = 0; i < v.size(); i++) {
@@ -83,4 +94,6 @@ int main() {
   STUDENT: Use your function to test if vec_b, vec_c, vec_d are within vec_a
            cout the result of each test
   */
+  cout << "vec_b is in vec_a " << find(vec_a, vec_b) << endl;
+  cout << "vec_c is in vec_a " << find(vec_c, vec_a) << endl;
 }
