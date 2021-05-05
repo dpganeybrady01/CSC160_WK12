@@ -1,4 +1,4 @@
-
+ 
 #include<iostream>
 #include<vector>
 
@@ -89,6 +89,10 @@ int main() {
   vec_d.push_back(8);
   vec_d.push_back(2);
 
+  vector<int> vec_e;
+  vec_e.push_back(5);
+  vec_e.push_back(7);
+
 
   /*
   STUDENT: Use your function to test if vec_b, vec_c, vec_d are within vec_a
@@ -96,4 +100,7 @@ int main() {
   */
   cout << "vec_b is in vec_a " << find(vec_a, vec_b) << endl;
   cout << "vec_c is in vec_a " << find(vec_c, vec_a) << endl;
+  cout << "vec_d is in vec_a " << find(vec_a, vec_d) << endl;
+  cout << "vec_e is in vec_a " << find(vec_a, vec_e) << endl;
+  cout << "vec_e is in vec_c " << find(vec_e, vec_c) << endl;
 }
